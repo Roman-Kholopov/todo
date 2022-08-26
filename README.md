@@ -6,3 +6,4 @@
     + **SearchPanel**
     + **TodoList**
 3. На ветке **getting_to_know_jsx** нет ничего важного, просто знакомство с **JSX**.
+4. На ветке **application_structure_refactoring** произведён рефакторинг структуры приложения - теперь отдельные компоненты - это отделные .js файлы в папке ./components.
