@@ -17,7 +17,7 @@ const App = () => {
             { isLoggedIn ? welcomeBox : loginBox}
             <AppHeader />
             <SearchPanel />
-            <TodoList items={['Drink Coffee', 'Build Awesome App']}/>
+            <TodoList />
         </div>
     )
 }
