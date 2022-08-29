@@ -13,3 +13,4 @@
 8. На ветке **second_structure_refactoring_app** отдельные компоненты размещены в отдельных папках, обновлены импорты, компонент App вынесен из index.js в отдельный компонент.
 9. На ветке **class_components** произведён рефакторинг 2-х компонентов: TodoListItem и ItemStatusFilter. Они переписаны с функциональных на классовые компоненты.
 10. На ветке **adding_logic_to_the_todolistitem_component** добавлен onClick.
+11. На ветке **use_setState_in_todoListItem** был добавлен setState для изменения состояния todoListItem.
