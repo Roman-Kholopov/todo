@@ -10,30 +10,24 @@ export default class TodoListItem extends Component {
 	}
 
 	onLabelClick = () => {
-		this.setState({
-			done: true
+		this.setState(({ done }) => {
+			return {
+				done: !done
+			}
 		})
 	}
 
 	onMarkImportant = () => {
-
-		if(!this.state.important) {
-			this.setState({
-				important: true
-			})
-		} else {
-			this.setState({
-				important: false
-			})
-		}
-		// this.setState({
-		// 	important: true
-		// })
+		this.setState(({ important }) => {
+			return {
+				important: !important
+			}
+		})
 	}
 
 	render() {
 
-		const { label } = this.props;
+		const { label, onDeleted } = this.props;
 		const { done,  important } = this.state;
 
 		let classNames = "todo-list-item";
@@ -60,7 +54,10 @@ export default class TodoListItem extends Component {
 			</button>
 	  
 			<button type="button"
-					className="btn btn-outline-danger btn-sm float-right">
+					className="btn btn-outline-danger btn-sm float-right"
+					// в onClick прокидываем props onDeleted, в todoList в props onDeleted прокидываем функцию из App и передеём в неё наш id. В App написан метод deleteItem , его прокидываем в props onDeleted компонента todoList.
+					onClick={onDeleted}>
+
 			  <i className="fa fa-trash-o" />
 			</button>
 		  </span>
