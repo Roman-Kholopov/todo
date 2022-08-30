@@ -17,3 +17,4 @@
 12. На ветке **logic_for_delete_button** написана логика для удаления todoListItem по нажатию на кнопку удаления.
 13. На ветке **add_Item_button** написана логика для добавления todoListItem по нажатию на кнопку Add Item (пока туда прокидывается текст из компонента ItemAddForm).
 14. На ветке **update_app_component** обновлен компонент App.
+15. На ветке **refactor_app_component** данные записаны с state. Теперь все изменения происходят только в app.js.
