@@ -105,6 +105,11 @@ export default class App extends Component {
 		})
 	}
 
+	// onChange = (e) => {
+    //     // console.log(e.target.value);
+	// 	const newItem = this.createTodoItem(e.target.value)
+	// }
+
 	render() {
 		const { todoData } = this.state;
 
@@ -131,6 +136,7 @@ export default class App extends Component {
 				/>
 				<ItemAddForm 
 					onItemAdded={this.addItem}
+					// onChange={this.onChange}
 				/>
 			</div>
 		);
