@@ -4,16 +4,19 @@ import AppHeader from '../app-header'
 import SearchPanel from '../search-panel';
 import TodoList from '../todo-list';
 import ItemStatusFilter from '../item-status-filter';
+import ItemAddForm from '../item-add-form';
 
 import './app.css';
 
 export default class App extends Component {
 
+	maxId = 100;
+
 	state = {
 		todoData: [
-			{ label: 'Drink Coffee', id: 1 },
-			{ label: 'Make Awesome App', id: 2 },
-			{ label: 'Have a lunch', id: 3 }
+			{ label: 'Drink Coffee', important: false, id: 1 },
+			{ label: 'Make Awesome App', important: false, id: 2 },
+			{ label: 'Have a lunch', important: false, id: 3 }
 		]
 	}
 
@@ -43,6 +46,22 @@ export default class App extends Component {
 		})
 	}
 
+	addItem = (text) => {
+		const newItem = {
+			label: text,
+			important: false,
+			id: this.maxId++
+		}
+
+		this.setState(({ todoData }) => {
+			const newArr = [...todoData, newItem];
+
+			return {
+				todoData: newArr
+			}
+		})
+	}
+
 	render() {
 
 		const { todoData } = this.state;
@@ -59,7 +78,10 @@ export default class App extends Component {
 					todos={todoData}
 					// в onClick прокидываем props onDeleted, в todoList в props onDeleted прокидываем функцию из App и передеём в неё наш id. В App написан метод deleteItem , его прокидываем в props onDeleted компонента todoList.
 					onDeleted={this.deleteItem}
-					/>
+				/>
+				<ItemAddForm 
+					onItemAdded={this.addItem}
+				/>
 			</div>
 		);
 	}

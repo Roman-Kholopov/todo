@@ -15,3 +15,4 @@
 10. На ветке **adding_logic_to_the_todolistitem_component** добавлен onClick.
 11. На ветке **use_setState_in_todoListItem** был добавлен setState для изменения состояния todoListItem.
 12. На ветке **logic_for_delete_button** написана логика для удаления todoListItem по нажатию на кнопку удаления.
+13. На ветке **add_Item_button** написана логика для добавления todoListItem по нажатию на кнопку Add Item (пока туда прокидывается текст из компонента ItemAddForm).
