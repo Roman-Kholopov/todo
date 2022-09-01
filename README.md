@@ -19,3 +19,4 @@
 14. На ветке **update_app_component** обновлен компонент App.
 15. На ветке **refactor_app_component** данные записаны с state. Теперь все изменения происходят только в app.js.
 16. На ветке **create_logit_to_add-form** данные записаны с state. Теперь все изменения происходят только в app.js.
+17. На ветке **create_logic_for_search_panel** сделана логика в компонентах App и SearchPanel.

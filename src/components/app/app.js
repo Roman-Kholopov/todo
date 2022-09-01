@@ -20,7 +20,8 @@ export default class App extends Component {
 			// { label: 'Drink Coffee', important: false, id: 1 },
 			// { label: 'Make Awesome App', important: false, id: 2 },
 			// { label: 'Have a lunch', important: false, id: 3 }
-		]
+		],
+		term: '',
 	}
 
 	createTodoItem(label) {
@@ -105,14 +106,31 @@ export default class App extends Component {
 		})
 	}
 
+	onSearchChange = (term) => {
+		this.setState({term});
+	}
+
+	search(items, term) {
+		if(term.length === 0) {
+			return items;
+		}
+
+		return items.filter((item) => {
+			return item.label
+				.toLowerCase()
+				.indexOf(term.toLowerCase()) > -1;
+		});
+	}
+
 	// onChange = (e) => {
     //     // console.log(e.target.value);
 	// 	const newItem = this.createTodoItem(e.target.value)
 	// }
 
 	render() {
-		const { todoData } = this.state;
+		const { todoData, term } = this.state;
 
+		const visibleItems = this.search(todoData, term);
 		const doneCount = todoData
 			.filter((item) => item.done).length;
 
@@ -123,12 +141,14 @@ export default class App extends Component {
 			<div className="todo-app">
 				<AppHeader toDo={todoCounter} done={doneCount} />
 				<div className="top-panel d-flex">
-					<SearchPanel />
+					<SearchPanel 
+						onSearchChange={this.onSearchChange}
+					/>
 					<ItemStatusFilter />
 				</div>
 	
 				<TodoList 
-					todos={todoData}
+					todos={visibleItems}
 					// в onClick прокидываем props onDeleted, в todoList в props onDeleted прокидываем функцию из App и передеём в неё наш id. В App написан метод deleteItem , его прокидываем в props onDeleted компонента todoList.
 					onDeleted={this.deleteItem}
 					onToggleImportant={this.onToggleImportant}
