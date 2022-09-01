@@ -20,3 +20,4 @@
 15. На ветке **refactor_app_component** данные записаны с state. Теперь все изменения происходят только в app.js.
 16. На ветке **create_logit_to_add-form** данные записаны с state. Теперь все изменения происходят только в app.js.
 17. На ветке **create_logic_for_search_panel** сделана логика в компонентах App и SearchPanel.
+18. На ветке **logic_item_status_filter** написана логика для компонента ItemStatusFilter, внесены изменения в App компонент. Приложение полностью закончено.
